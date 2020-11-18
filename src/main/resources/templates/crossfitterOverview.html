@@ -17,7 +17,8 @@
     </tr>
     <tr th:each="crossfitter: ${allCrossFitters}">
         <td th:text="${crossfitter.crossFitterId}" />
-        <td th:text="${crossfitter.name}" />
+        <td><a th:href="@{/crossfitter/{crossfitterName}(crossfitterName=${crossfitter.name})}" th:text="${crossfitter.name}"/></td>
+<!--        <td th:text="${crossfitter.name}" />-->
     </tr>
 </table>
 

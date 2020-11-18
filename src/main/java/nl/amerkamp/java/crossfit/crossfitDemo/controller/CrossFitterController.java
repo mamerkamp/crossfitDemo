@@ -8,7 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.Optional;
 
 /**
  * Author: Mark Amerkamp (markamerkamp@gmail.com)
@@ -27,6 +30,16 @@ public class CrossFitterController {
         model.addAttribute("allCrossFitters", crossFitterRepository.findAll());
         model.addAttribute("crossFitter", new CrossFitter());
         return "crossfitterOverview";
+    }
+
+    @GetMapping("crossfitter/{crossFitterName}")
+    protected String showCrossFitterDetails(Model model, @PathVariable("crossFitterName") String crossFitterName) {
+        Optional<CrossFitter> crossFitterBox = crossFitterRepository.findByName(crossFitterName);
+        if(crossFitterBox.isEmpty()) {
+            return "redirect:/crossfitter";
+        }
+        model.addAttribute("crossfitter", crossFitterBox.get());
+        return "crossfitterDetail";
     }
 
 
