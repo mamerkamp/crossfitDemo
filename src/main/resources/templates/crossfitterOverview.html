@@ -6,6 +6,17 @@
     <title>CrossFitter Overview</title>
 </head>
 <body>
+<h1>Overview of the CrossFitter in this database</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+    </tr>
+    <tr th:each="crossfitter: ${allCrossFitters}">
+        <td th:text="${crossfitter.crossfitterId}" />
+        <td th:text="${crossfitter.name}" />
+    </tr>
+</table>
 
 </body>
 </html>
