@@ -3,18 +3,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
     <title>Workout Overview</title>
 </head>
 <body>
-    <h1>Workouts</h1>
+<img src="css/images/snatch.jpg" height="250" width="500" align="center"/>
+<h1>Workouts</h1>
     <table>
         <tr>
-            <th>Workout name:</th>
+            <th>ID</th>
+            <th>Workout name: </th>
         </tr>
-        <tr th:each="workout: ${allWorkouts}">
-            <td th:text="${workout.}"></td>
+        <tr th:each="workout: ${allWorkout}">
+            <td th:text="${workout.workoutId}"></td>
+            <td th:text="${workout.workoutName}"></td>
         </tr>
     </table>
+
+    <p>
+        <a th:href="@{/crossfitter}">CrossFitters overview</a>
+    </p>
+
+    <h1>Add a new Workout</h1>
+    <form th:action="@{/workout/add}" th:object="${workout}" method="post">
+        <p>Name: <input type="text" th:field="*{workoutName}" /></p>
+        <p><input type="submit" value="Submit" /></p>
+
+    </form>
+
 
 </body>
 </html>

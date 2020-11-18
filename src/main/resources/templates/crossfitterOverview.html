@@ -3,12 +3,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
     <title>CrossFitter Overview</title>
 </head>
 <body>
+<img src="/css/images/Zo-ziet-crossfit-eruit.jpg" height="531" width="800"/>
 <h1>Overview of the CrossFitter in this database</h1>
 
-<table>
+<table id="crossfittersoverview">
     <tr>
         <th>Id</th>
         <th>Name</th>
@@ -16,16 +18,20 @@
     <tr th:each="crossfitter: ${allCrossFitters}">
         <td th:text="${crossfitter.crossFitterId}" />
         <td th:text="${crossfitter.name}" />
-        <td></td>
     </tr>
 </table>
 
+<p>
+    <a th:href="@{/workout}">Workout overview</a>
+</p>
 <h1>Add a new CrossFitter</h1>
 <form th:action="@{/crossfitter/add}" th:object="${crossFitter}" method="post">
     <p>Name: <input type="text" th:field="*{name}" /></p>
     <p><input type="submit" value="Submit" /></p>
 
 </form>
+
+
 
 </body>
 </html>

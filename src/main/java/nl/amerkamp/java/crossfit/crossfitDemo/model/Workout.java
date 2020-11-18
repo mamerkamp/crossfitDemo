@@ -18,13 +18,13 @@ public class Workout {
 
     private String workoutName;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "crossFitterId", referencedColumnName = "crossFitterId", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-
-    private CrossFitter crossFitter;
-
-    @ManyToMany(mappedBy = "workout")
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//    //@JoinColumn(name = "crossFitterId", referencedColumnName = "crossFitterId", nullable = false)
+//    @OnDelete(action = OnDeleteAction.CASCADE)
+//
+//    private CrossFitter crossFitter;
+//
+//    @ManyToMany(mappedBy = "workout")
 
     public Integer getWorkoutId() {
         return workoutId;
