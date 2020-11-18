@@ -1,9 +1,9 @@
 package nl.amerkamp.java.crossfit.crossfitDemo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import javax.persistence.*;
 
 /**
  * Author: Mark Amerkamp (markamerkamp@gmail.com)
@@ -17,6 +17,14 @@ public class Workout {
     private Integer workoutId;
 
     private String workoutName;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "crossFitterId", referencedColumnName = "crossFitterId", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+
+    private CrossFitter crossFitter;
+
+    @ManyToMany(mappedBy = "workout")
 
     public Integer getWorkoutId() {
         return workoutId;

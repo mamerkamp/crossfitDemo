@@ -1,10 +1,20 @@
 <!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Workout Overview</title>
 </head>
 <body>
+    <h1>Workouts</h1>
+    <table>
+        <tr>
+            <th>Workout name:</th>
+        </tr>
+        <tr th:each="workout: ${allWorkouts}">
+            <td th:text="${workout.}"></td>
+        </tr>
+    </table>
 
 </body>
 </html>

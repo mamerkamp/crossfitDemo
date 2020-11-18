@@ -1,4 +1,7 @@
 package nl.amerkamp.java.crossfit.crossfitDemo.repository;
 
-public interface WorkoutRepository {
+import nl.amerkamp.java.crossfit.crossfitDemo.model.Workout;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface WorkoutRepository extends JpaRepository<Workout, Integer> {
 }
