@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
-    <title>CrossFitter Detail</title>
+<!--    <title>CrossFitter Detail</title>-->
+    <title th:text="@{${crossfitter.name} + ' details'}">Details</title>
 </head>
 <body>
 <h1><span th:text="${crossfitter.name}" /> Details</h1>
@@ -14,6 +15,9 @@
         <td th:text="${crossfitter.name}" />
     </tr>
 </table>
+
+<h1>Add a new PR</h1>
+<!--Hier komt de code om een workout te selecteren uit dropdown en daarachter een invul veld. -->
 
 <p>
     <a th:href="@{/crossfitter}">CrossFitters overview</a>
