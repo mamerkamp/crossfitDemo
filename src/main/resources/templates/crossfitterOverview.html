@@ -10,13 +10,22 @@
 
 <table>
     <tr>
+        <th>Id</th>
         <th>Name</th>
     </tr>
     <tr th:each="crossfitter: ${allCrossFitters}">
-        <td th:text="${crossfitter.crossfitterId}" />
+        <td th:text="${crossfitter.crossFitterId}" />
         <td th:text="${crossfitter.name}" />
+        <td></td>
     </tr>
 </table>
+
+<h1>Add a new CrossFitter</h1>
+<form th:action="@{/crossfitter/add}" th:object="${crossFitter}" method="post">
+    <p>Name: <input type="text" th:field="*{name}" /></p>
+    <p><input type="submit" value="Submit" /></p>
+
+</form>
 
 </body>
 </html>

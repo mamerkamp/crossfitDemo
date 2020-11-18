@@ -1,9 +1,6 @@
 package nl.amerkamp.java.crossfit.crossfitDemo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Author: Mark Amerkamp (markamerkamp@gmail.com)
@@ -15,16 +12,16 @@ public class CrossFitter {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer crossfitterId;
+    private Integer crossFitterId;
 
     private String name;
 
-    public Integer getCrossfitterId() {
-        return crossfitterId;
+    public Integer getCrossFitterId() {
+        return crossFitterId;
     }
 
-    public void setCrossfitterId(Integer crossfitterId) {
-        this.crossfitterId = crossfitterId;
+    public void setCrossFitterId(Integer crossfitterId) {
+        this.crossFitterId = crossfitterId;
     }
 
     public String getName() {
