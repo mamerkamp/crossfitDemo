@@ -18,7 +18,16 @@
 
 <h1>Add a new PR</h1>
 <!--Hier komt de code om een workout te selecteren uit dropdown en daarachter een invul veld. -->
-
+<!--<form th:action="@{/personalerecord/add}" th:object="${personalrecord}" method="post">-->
+<!--    <p>PR: <input type="text" th:field="*{personalrecord}" /></p>-->
+<!--    <p>-->
+<!--        Workout-->
+<!--        <select th:field="*{allWorkout}">-->
+<!--            <option th:each="author: ${allWorkout}" th:value="$t{workout.workoutId}" th:text="${workout.workoutName}"></option>-->
+<!--        </select>-->
+<!--    </p>-->
+<!--    <p><input type="submit" value="Voeg workout toe" /></p>-->
+<!--</form>-->
 <p>
     <a th:href="@{/crossfitter}">CrossFitters overview</a>
 </p>
