@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
 <!--    <title>CrossFitter Detail</title>-->
-    <title th:text="@{${crossfitter.name} + ' details'}">Details</title>
+    <title th:text="@{${crossfitter.name} + 's details'}">Details</title>
 </head>
 <body>
 <h1><span th:text="${crossfitter.name}" /> Details</h1>
-<table>
+<table id="crossfittersoverview">
     <tr>
         <td>Name</td>
         <td th:text="${crossfitter.name}" />
