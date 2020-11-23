@@ -37,7 +37,7 @@ public class PRController {
             return "prOverview";
         } else {
             prRepository.save(pr);
-            return "redirect/pr";
+            return "redirect:/pr";
         }
     }
 }
