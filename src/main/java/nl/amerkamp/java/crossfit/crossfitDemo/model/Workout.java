@@ -1,9 +1,7 @@
 package nl.amerkamp.java.crossfit.crossfitDemo.model;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Author: Mark Amerkamp (markamerkamp@gmail.com)
@@ -12,11 +10,15 @@ import javax.persistence.*;
  */
 @Entity
 public class Workout {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer workoutId;
 
     private String workoutName;
+
+//    @OneToMany(mappedBy = "workout")
+//    private List<Workout> myWorkout;
 
 //    @ManyToOne(fetch = FetchType.LAZY, optional = false)
 //    //@JoinColumn(name = "crossFitterId", referencedColumnName = "crossFitterId", nullable = false)
@@ -41,4 +43,8 @@ public class Workout {
     public void setWorkoutName(String workoutName) {
         this.workoutName = workoutName;
     }
+
+//    public int getNumberOfWorkout() {
+//        return myWorkout.size();
+//    }
 }

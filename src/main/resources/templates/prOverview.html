@@ -27,11 +27,18 @@
         <th>Add a PR</th>
     </tr>
     <form th:action="@{/pr/add}" th:object="${pr}" method="post">
+
         <p>Name: <select th:field="*{crossFitter}">
             <option th:each="crossfitter: ${allCrossFitters}" th:value="${crossfitter.crossFitterId}"
                     th:text="${crossfitter.name}"></option>
         </select>
-        </p>
+
+<!--        <p>Workout: <select th:field="test">-->
+<!--            <option th:each="workout: ${allWorkout}" th:value="${workout.workoutId}"-->
+<!--                    th:text="${workout.workoutName}"></option>-->
+<!--    </select>-->
+
+<!--        </p>-->
         <pr>PR: <input type="text" th:field="*{prNumber}" />
         </pr>
         <p><input type="submit" value="Submit PR" /> </p>
