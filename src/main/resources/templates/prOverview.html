@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PR Overview</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+<h1>PR Overview of: NAME
+</h1>
+<table>
+    <tr>
+        <th>CrossFitter Name:</th>
+        <th>PR:</th>
+    </tr>
+    <tr th:each="pr: ${allPR}">
+<!--        <td th:text="${pr.prId}"></td>-->
+    </tr>
+
+</table>
+
+<h1>Add a PR</h1>
+<table>
+    <tr>
+        <th>CrossFitter Name:</th>
+        <th>Add a PR</th>
+    </tr>
+    <form th:action="@{/pr/add}" th:object="${pr}" method="post">
+        <p>Name: <select th:field="*{crossFitter}">
+            <option th:each="crossfitter: ${allCrossFitters}" th:value="${crossfitter.crossFitterId}"
+                    th:text="${crossfitter.name}"></option>
+        </select>
+        </p>
+        <pr>PR: <input type="text" th:field="*{prNumber}" />
+        </pr>
+        <p><input type="submit" value="Submit PR" /> </p>
+    </form>
+</table>
+
+
+<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+</body>
+</html>
