@@ -25,9 +25,9 @@ public class PRController {
 
     @GetMapping("/pr")
     protected String showPR(Model model) {
-        model.addAttribute("allCrossFitters", crossFitterRepository.findAll());
+//        model.addAttribute("allCrossFitters", crossFitterRepository.findAll());
         model.addAttribute("allPR", prRepository.findAll());
-        model.addAttribute("PR", new PR());
+        model.addAttribute("pr", new PR());
         return "prOverview";
     }
 
