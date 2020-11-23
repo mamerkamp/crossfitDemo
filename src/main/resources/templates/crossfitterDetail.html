@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/>
 <!--    <title>CrossFitter Detail</title>-->
     <title th:text="@{${crossfitter.name} + 's details'}">Details</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 </head>
 <body>
 <h1><span th:text="${crossfitter.name}" /> Details</h1>
@@ -31,6 +32,8 @@
 <p>
     <a th:href="@{/crossfitter}">CrossFitters overview</a>
 </p>
-
+<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
 </body>
 </html>
