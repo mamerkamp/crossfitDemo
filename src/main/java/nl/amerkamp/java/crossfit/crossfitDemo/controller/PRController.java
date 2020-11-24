@@ -38,6 +38,13 @@ public class PRController {
         return "prOverview";
     }
 
+    @GetMapping("/pr/add")
+    protected String showPR(Model model) {
+        model.addAttribute("pr", new PR());
+        model.addAttribute("allPR", prRepository.findAll());
+        return "prOverview"
+    }
+
     @PostMapping("/pr/add")
     protected String saveOrUpdatePR(@ModelAttribute("pr") PR pr, BindingResult result) {
         if (result.hasErrors()) {

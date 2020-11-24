@@ -23,6 +23,10 @@ public class PR {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private CrossFitter crossFitter;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Workout workout;
+
     public Integer getPrId() {
         return prId;
     }
@@ -45,5 +49,13 @@ public class PR {
 
     public void setCrossFitter(CrossFitter crossFitter) {
         this.crossFitter = crossFitter;
+    }
+
+    public Workout getWorkout() {
+        return workout;
+    }
+
+    public void setWorkout(Workout workout) {
+        this.workout = workout;
     }
 }
