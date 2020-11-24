@@ -18,8 +18,9 @@ public class PR {
     private Integer prId;
     private int prNumber;
 
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//    @JoinColumn(name = "crossFitterId", referencedColumnName = "crossFitterId", nullable = false)
+    @JoinColumn(name = "crossFitterId", referencedColumnName = "crossFitterId", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private CrossFitter crossFitter;
 

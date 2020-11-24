@@ -14,6 +14,8 @@ public class CrossFitter {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer crossFitterId;
 
+    //Hier moet een one to many relatie komen als ik voor alle crossfitters de pr's wil opvragen
+
     private String name;
 
     public Integer getCrossFitterId() {
