@@ -37,13 +37,13 @@ public class PRController {
         model.addAttribute("pr", new PR());
         return "prOverview";
     }
-
-    @GetMapping("/pr/add")
-    protected String showPR(Model model) {
-        model.addAttribute("pr", new PR());
-        model.addAttribute("allPR", prRepository.findAll());
-        return "prOverview"
-    }
+//Onderstaand moet naar detail gaan linken, pagina moet nog gebouw worden.
+//    @GetMapping("/pr/add")
+//    protected String showPR(Model model) {
+//        model.addAttribute("pr", new PR());
+//        model.addAttribute("allPR", prRepository.findAll());
+//        return "prOverview"
+//    }
 
     @PostMapping("/pr/add")
     protected String saveOrUpdatePR(@ModelAttribute("pr") PR pr, BindingResult result) {
